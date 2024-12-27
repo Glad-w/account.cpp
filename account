@@ -1,0 +1,15 @@
+#include "Account.h"
+
+Account::Account(std::string name, std::string id, std::string email, std::string phone, std::string kraPin)
+    : name(name), identityNumber(id), email(email), phoneNumber(phone), kraPin(kraPin), balance(0.0) {}
+
+Account::~Account() {}
+
+void Account::checkBalance() const {
+    std::cout << "Current balance: " << balance << std::endl;
+}
+
+void Account::saveToFile(std::ofstream& outFile) const {
+    outFile << name << "\n" << identityNumber << "\n" << email << "\n" 
+            << phoneNumber << "\n" << kraPin << "\n" << balance << std::endl;
+}
